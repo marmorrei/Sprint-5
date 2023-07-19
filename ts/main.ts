@@ -18,6 +18,9 @@ function fetchJoke(): void {
   })
     .then((res) => res.json())
     .then((res: joke) => {
-      console.log(res);
+      const $jokesText: HTMLElement = <HTMLElement>(
+        document.getElementById("jokes-text")
+      );
+      $jokesText.innerHTML = res.joke;
     });
 }

@@ -10,6 +10,7 @@ function fetchJoke() {
     })
         .then((res) => res.json())
         .then((res) => {
-        console.log(res);
+        const $jokesText = (document.getElementById("jokes-text"));
+        $jokesText.innerHTML = res.joke;
     });
 }

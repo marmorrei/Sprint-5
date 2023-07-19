@@ -5,14 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Are you joking?</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 
 <body>
-    <main id="main-container">
-        <h1>Are you joking?</h1>
-        <div id="jokes-box"></div>
-        <button type="button" onclick="fetchJoke()">Next joke</button>
-    </main>
+    <div class="container">
+        <header class="header">
+            <div id="weather">Today's weather</div>
+        </header>
+        <main class="main">
+            <h1>Are you joking?</h1>
+            <div id="jokes-box">
+                <p id="jokes-text"></p>
+            </div>
+            <button type="button" onclick="fetchJoke()">Next joke</button>
+        </main>
+    </div>
     <script src="/public/js/main.js"></script>
 </body>
 

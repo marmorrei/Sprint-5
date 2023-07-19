@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  margin: 0rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/public/css/images/bg-girls-laughing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.header {
+  align-self: flex-start;
+  font-size: 2.1rem;
+  text-align: center;
+  color: white;
+  margin: 2rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  background-color: rgb(128, 128, 128, 0.5);
+  border-radius: 3rem;
+  margin: 10rem 20rem;
+  padding: 8rem;
+}
+.main h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+}
+#jokes-text {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  padding: 3rem 4rem;
+}
+.main button {
+  font-size: 1.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.main button:hover {
+    font-weight: bolder;
+}
+@media only screen and (max-width: 600px) {
+    .main {
+        max-width: 70%;
+        background-color: rgb(128, 128, 128, 0.5);
+        border-radius: 3rem;
+        margin: 5rem 10rem;
+        padding: 3rem;
+    }
+    #jokes-text {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        
+    }
+}
+@media only screen and (max-width: 992px) {
+    .main {
+        max-width: 60%;
+        background-color: rgb(128, 128, 128, 0.5);
+        border-radius: 3rem;
+        margin: 7rem 12rem;
+        padding: 5rem;
+    }
+    #jokes-text {
+        font-size: 2rem;
+        padding: 1.5rem 2.5rem;
+        
+    }
+}
