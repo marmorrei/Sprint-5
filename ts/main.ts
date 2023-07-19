@@ -1,6 +1,14 @@
-import { joke } from "./interface/interface";
+// INTERFACES
 
-export default function fetchJoke(): void {
+interface joke {
+  id: string;
+  joke: string;
+  status: number;
+}
+
+// fetchJoke()
+
+function fetchJoke(): void {
   const urlJokes: string = "https://icanhazdadjoke.com/";
 
   fetch(urlJokes, {

@@ -1,4 +1,7 @@
-export default function fetchJoke() {
+"use strict";
+// INTERFACES
+// fetchJoke()
+function fetchJoke() {
     const urlJokes = "https://icanhazdadjoke.com/";
     fetch(urlJokes, {
         headers: {
