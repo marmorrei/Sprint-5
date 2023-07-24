@@ -12,8 +12,19 @@ var _a, _b, _c;
 //Array to store joke's reports & score value
 const reportJokes = [];
 let scoreValue;
-// fetchJoke()
-(_a = document.getElementById("nextButton")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", fetchJoke);
+// Random jokes call
+(_a = document
+    .getElementById("nextButton")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", fetchRandomJokes);
+function fetchRandomJokes() {
+    let randomNumber = Math.floor(Math.random() * 2);
+    if (randomNumber === 1) {
+        fetchJoke();
+    }
+    else {
+        fetchChuckNorris();
+    }
+}
+// Dad Jokes API
 function fetchJoke() {
     const urlJokes = "https://icanhazdadjoke.com/";
     fetch(urlJokes, {
@@ -27,6 +38,40 @@ function fetchJoke() {
         $jokesText.innerHTML = res.joke;
     });
 }
+// Chuck Norris API
+function fetchChuckNorris() {
+    const urlChuckNorris = "https://api.chucknorris.io/jokes/random";
+    fetch(urlChuckNorris)
+        .then((resChuck) => resChuck.json())
+        .then((resChuck) => {
+        const $jokesText = (document.getElementById("jokes-text"));
+        $jokesText.innerHTML = resChuck.value;
+    });
+}
+// Weather API
+function fetchWeather() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const urlWeather = "https://weatherapi-com.p.rapidapi.com/current.json?q=Barcelona";
+        const options = {
+            method: "GET",
+            headers: {
+                "X-RapidAPI-Key": "0d030e417cmsh969e291855f2103p1f52e0jsn26371d57982e",
+                "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+            },
+        };
+        try {
+            const response = yield fetch(urlWeather, options);
+            const result = yield response.json();
+            const $weatherText = (document.getElementById("weather"));
+            $weatherText.innerHTML = `${result.location.name} - ${result.current.condition.text}`;
+            console.log(result);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    });
+}
+fetchWeather();
 // Score buttons to appear
 (_b = document
     .getElementById("nextButton")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", displayScoreButtons);
@@ -59,27 +104,3 @@ function saveReport() {
     }
     scoreValue = undefined;
 }
-//Weather API
-function fetchWeather() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const urlWeather = "https://weatherapi-com.p.rapidapi.com/current.json?q=Barcelona";
-        const options = {
-            method: "GET",
-            headers: {
-                "X-RapidAPI-Key": "0d030e417cmsh969e291855f2103p1f52e0jsn26371d57982e",
-                "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-            },
-        };
-        try {
-            const response = yield fetch(urlWeather, options);
-            const result = yield response.json();
-            const $weatherText = (document.getElementById("weather"));
-            $weatherText.innerHTML = `${result.location.name} - ${result.current.condition.text}`;
-            console.log(result);
-        }
-        catch (error) {
-            console.error(error);
-        }
-    });
-}
-fetchWeather();
