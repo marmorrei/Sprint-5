@@ -4,17 +4,19 @@
   margin: 0rem;
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  background-image: url(/public/css/images/bg-girls-laughing.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(/public/css/images/bg-girls-laughing.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
 }
 
 .header {
@@ -41,46 +43,72 @@
   text-align: center;
   color: white;
 }
+.jokes-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #jokes-text {
   font-size: 2.5rem;
   text-align: center;
   color: white;
   padding: 3rem 4rem;
 }
-.main button {
+#score-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3rem;
+}
+#score-options img {
+  width: 4rem;
+  height: 4rem;
+}
+.score-btn {
+  background: none;
+  border: none;
+  margin: 1rem;
+}
+.score-btn:focus {
+  background-color: white;
+  border-radius: 3rem;
+  padding-top: 1rem;
+}
+#nextButton {
   font-size: 1.9rem;
   border: none;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
+  margin-top: 3rem;
 }
-.main button:hover {
-    font-weight: bolder;
+#nextButton:hover {
+  font-weight: bolder;
 }
 @media only screen and (max-width: 600px) {
-    .main {
-        max-width: 70%;
-        background-color: rgb(128, 128, 128, 0.5);
-        border-radius: 3rem;
-        margin: 5rem 10rem;
-        padding: 3rem;
-    }
-    #jokes-text {
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-        
-    }
+  .main {
+    max-width: 70%;
+    background-color: rgb(128, 128, 128, 0.5);
+    border-radius: 3rem;
+    margin: 5rem 10rem;
+    padding: 3rem;
+  }
+  #jokes-text {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
 }
 @media only screen and (max-width: 992px) {
-    .main {
-        max-width: 60%;
-        background-color: rgb(128, 128, 128, 0.5);
-        border-radius: 3rem;
-        margin: 7rem 12rem;
-        padding: 5rem;
-    }
-    #jokes-text {
-        font-size: 2rem;
-        padding: 1.5rem 2.5rem;
-        
-    }
+  .main {
+    max-width: 60%;
+    background-color: rgb(128, 128, 128, 0.5);
+    border-radius: 3rem;
+    margin: 7rem 12rem;
+    padding: 5rem;
+  }
+  #jokes-text {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+  }
 }
